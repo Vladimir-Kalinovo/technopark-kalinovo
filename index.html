@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Технопарк Калиново — аренда производственных и складских помещений в Серпухове</title>
+<meta name="description" content="Аренда производственных, складских и офисных помещений с высокой электрической мощностью (до 400 кВт) в технопарке Калиново, г.о. Серпухов, Московская область. Свободные площади от 250 до 1440 м².">
+<meta name="keywords" content="аренда склада, аренда производственного помещения, аренда цеха, Серпухов, Калиново, электрическая мощность, технопарк">
+<meta name="theme-color" content="#1c2126">
+<meta name="robots" content="index, follow">
+<meta name="format-detection" content="telephone=no">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Технопарк Калиново">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Технопарк Калиново — аренда производственных и складских помещений">
+<meta property="og:description" content="Свободные производственные и складские площади 250–1440 м² с электрической мощностью до 400 кВт. Серпухов, д. Калиново.">
+<meta property="og:url" content="https://technopark-kalinovo.ru/">
+<meta property="og:image" content="https://technopark-kalinovo.ru/kmc-1070-1.jpg">
+<link rel="canonical" href="https://technopark-kalinovo.ru/">
+<!-- Favicon (эмодзи, без внешних файлов) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ========================================================================
+   ДИЗАЙН-ТОКЕНЫ
+   ======================================================================== */
+:root {
+  --color-graphite: #1c2126;
+  --color-graphite-2: #2a3038;
+  --color-steel: #4b5563;
+  --color-steel-light: #8a94a3;
+  --color-paper: #f3f4f2;
+  --color-paper-2: #e8e9e5;
+  --color-white: #ffffff;
+  --color-amber: #3d6ea5;
+  --color-amber-dim: #d6e3ef;
+  --color-green: #2f7d4f;
+  --color-green-bg: #e7f2ea;
+  --color-red: #b23b2e;
+  --color-red-bg: #f6e9e7;
+
+  --font-display: "Archivo", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", "Courier New", monospace;
+
+  --radius: 3px;
+  --border: 1px solid #d4d6d1;
+  --shadow: 0 1px 2px rgba(28,33,38,.06), 0 8px 24px rgba(28,33,38,.06);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-graphite);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; cursor: pointer; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+main { flex: 1; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+[data-view] { display: none; }
+[data-view].active { display: block; }
+
+/* ---------- Шапка ---------- */
+.site-header {
+  background: var(--color-graphite);
+  color: var(--color-paper);
+  border-bottom: 3px solid var(--color-amber);
+  position: sticky; top: 0; z-index: 20;
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 40px; height: 40px; border: 2px solid var(--color-amber); border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-weight: 700; color: var(--color-amber); font-size: 13px; flex-shrink: 0;
+}
+.brand-text .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 17px; letter-spacing: .3px; text-transform: uppercase; white-space: nowrap; }
+.brand-text .brand-tagline { font-size: 12.5px; color: var(--color-steel-light); margin-top: 2px; }
+.site-nav { display: flex; align-items: center; gap: 30px; font-size: 14.5px; color: var(--color-white); }
+.site-nav a { padding-bottom: 3px; border-bottom: 2px solid transparent; color: var(--color-white); }
+.site-nav a:hover, .site-nav a.active { color: var(--color-white); border-bottom-color: var(--color-amber); }
+.site-nav .nav-phone { font-family: var(--font-mono); font-weight: 600; color: var(--color-white); border-left: 1px solid var(--color-graphite-2); padding-left: 28px; }
+
+/* ---------- Hero ---------- */
+.page-hero {
+  padding: 64px 0 40px;
+  border-bottom: var(--border);
+  background:
+    radial-gradient(1100px 260px at 85% -20%, rgba(61,110,165,.10), transparent 60%),
+    var(--color-paper);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after{
+  content:"";
+  position:absolute; right:-40px; top:-40px; width:260px; height:260px;
+  border:1px dashed rgba(61,110,165,.35); border-radius:50%;
+}
+.eyebrow {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--color-steel); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--color-amber); display: inline-block; }
+.page-hero h1 { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -.4px; margin: 0 0 14px; max-width: 780px; }
+.page-hero p { font-size: 16px; color: var(--color-steel); max-width: 620px; margin: 0; }
+
+/* ---------- Панель фильтров ---------- */
+.filter-panel {
+  background: var(--color-white); border: var(--border); border-radius: var(--radius);
+  padding: 22px 24px; margin: 28px 0 20px; display: grid;
+  grid-template-columns: repeat(4, 1fr) auto; gap: 18px; align-items: end; box-shadow: var(--shadow);
+}
+.filter-field label { display:block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: var(--color-steel); margin-bottom: 8px; }
+.filter-field select, .filter-field input {
+  width: 100%; padding: 9px 10px; border: var(--border); border-radius: var(--radius);
+  font-family: var(--font-body); font-size: 14px; background: var(--color-paper); color: var(--color-graphite);
+}
+.filter-range { display: flex; align-items: center; gap: 8px; }
+.filter-reset { background:none; border: var(--border); border-radius: var(--radius); padding: 9px 16px; font-size: 13.5px; color: var(--color-steel); white-space: nowrap; }
+.filter-reset:hover { border-color: var(--color-amber); color: var(--color-amber); }
+.results-summary { display: flex; gap: 24px; font-size: 14px; color: var(--color-steel); margin-bottom: 24px; }
+.results-summary strong { color: var(--color-graphite); font-family: var(--font-mono); }
+
+/* ---------- Сетка карточек ---------- */
+.property-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-bottom: 64px; }
+.property-card {
+  background: var(--color-white); border: var(--border); border-radius: var(--radius); overflow: hidden;
+  transition: box-shadow .15s ease, transform .15s ease; display: flex; flex-direction: column;
+}
+.property-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.card-photo { aspect-ratio: 4/3; background: var(--color-paper-2); position: relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.card-photo img { width:100%; height:100%; object-fit:cover; }
+.card-photo .photo-placeholder { color: var(--color-steel-light); display:flex; flex-direction:column; align-items:center; gap:8px; font-size:11.5px; font-family: var(--font-mono); letter-spacing:.5px; }
+.card-photo .photo-placeholder svg { width:34px; height:34px; opacity:.6; }
+.asset-tag {
+  position:absolute; left:10px; top:10px; z-index:1;
+  font-family: var(--font-mono); font-size:11px; font-weight:700; letter-spacing:.5px;
+  background: rgba(28,33,38,.82); color: var(--color-paper);
+  border: 1px solid var(--color-amber); border-radius: var(--radius);
+  padding: 3px 7px;
+}
+.status-badge {
+  position:absolute; top:12px; right:12px; font-family: var(--font-mono); font-size:11px; font-weight:600;
+  letter-spacing:.4px; text-transform:uppercase; padding:5px 10px; border-radius: var(--radius);
+}
+.status-badge.free { background: var(--color-green-bg); color: var(--color-green); }
+.status-badge.rented { background: var(--color-red-bg); color: var(--color-red); }
+.card-body { padding: 18px 20px 20px; display:flex; flex-direction:column; flex:1; }
+.card-body h3 { font-family: var(--font-display); font-size: 19px; margin: 0 0 6px; font-weight:700; }
+.card-address { font-size: 13px; color: var(--color-steel); margin-bottom: 14px; }
+.spec-strip { display:grid; grid-template-columns: repeat(3,1fr); border-top:1px dashed #d4d6d1; border-bottom:1px dashed #d4d6d1; padding:12px 0; margin-bottom:14px; }
+.spec-strip .spec { text-align:center; border-left:1px solid #e2e3df; }
+.spec-strip .spec:first-child { border-left:none; }
+.spec .spec-value { font-family: var(--font-mono); font-weight:700; font-size:15px; color: var(--color-graphite); }
+.spec .spec-value .unit { font-size:11px; font-weight:500; color: var(--color-steel); margin-left:2px; }
+.spec .spec-label { font-size:10px; letter-spacing:.4px; text-transform:uppercase; color: var(--color-steel-light); margin-top:2px; }
+.card-footer { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
+.card-price { font-family: var(--font-mono); font-weight:700; font-size:18px; }
+.card-price .per-month { font-size:12px; font-weight:400; color: var(--color-steel); }
+.card-price .vat-note, .object-price .vat-note { font-size:12px; font-weight:400; color: var(--color-steel); }
+.card-type-tag { font-size:12.5px; color: var(--color-steel); border-bottom:1px solid var(--color-amber); }
+.empty-state { grid-column: 1/-1; text-align:center; padding:64px 20px; color: var(--color-steel); font-size:15px; }
+
+/* ---------- Страница объекта ---------- */
+.breadcrumb { padding: 20px 0; font-size: 13px; color: var(--color-steel); }
+.breadcrumb a:hover { color: var(--color-amber); }
+.object-layout { display:grid; grid-template-columns: 1.6fr 1fr; gap:40px; padding-bottom:64px; align-items:start; }
+.gallery-main { aspect-ratio:16/10; background: var(--color-graphite); border-radius: var(--radius); overflow:hidden; position:relative; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+.gallery-main .gallery-bg { position:absolute; inset:0; background-size:cover; background-position:center; filter:blur(28px) brightness(.55); transform:scale(1.15); z-index:0; }
+.gallery-main img { position:relative; z-index:1; width:100%; height:100%; object-fit:contain; }
+.gallery-main .photo-placeholder { color: var(--color-steel-light); display:flex; flex-direction:column; align-items:center; gap:10px; font-family: var(--font-mono); font-size:12.5px; }
+.gallery-main .photo-placeholder svg { width:48px; height:48px; opacity:.5; }
+.gallery-counter { position:absolute; z-index:2; bottom:14px; right:14px; background:rgba(28,33,38,.75); color:#fff; font-family: var(--font-mono); font-size:12px; padding:4px 10px; border-radius: var(--radius); }
+.gallery-nav { position:absolute; z-index:2; top:50%; transform:translateY(-50%); background:rgba(28,33,38,.55); color:#fff; border:none; width:36px; height:36px; border-radius:50%; font-size:18px; display:flex; align-items:center; justify-content:center; }
+.gallery-nav.prev { left:12px; } .gallery-nav.next { right:12px; }
+.gallery-nav:hover { background: var(--color-amber); }
+.gallery-thumbs { display:flex; gap:8px; }
+.gallery-thumbs button { width:64px; height:48px; border-radius: var(--radius); border:2px solid transparent; background: var(--color-paper-2); overflow:hidden; padding:0; }
+.gallery-thumbs button.active { border-color: var(--color-amber); }
+.gallery-thumbs img { width:100%; height:100%; object-fit:cover; }
+.object-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin:24px 0 4px; }
+.object-title-row h1 { font-family: var(--font-display); font-size:30px; margin:0; font-weight:800; }
+.object-price { font-family: var(--font-mono); font-weight:700; font-size:30px; margin:10px 0 6px; }
+.object-price .per-month { font-size:14px; font-weight:400; color: var(--color-steel); }
+.object-address { font-size:14.5px; color: var(--color-steel); margin-bottom:28px; }
+.spec-panel { border: var(--border); border-radius: var(--radius); background: var(--color-white); margin-bottom:28px; }
+.spec-panel-header { font-family: var(--font-mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color: var(--color-steel); padding:12px 20px; border-bottom: var(--border); background: var(--color-paper); }
+.spec-panel-grid { display:grid; grid-template-columns: repeat(2,1fr); }
+.spec-panel-item { padding:18px 20px; border-right:1px solid #e2e3df; border-bottom:1px solid #e2e3df; }
+.spec-panel-item:nth-child(2n) { border-right:none; }
+.spec-panel-item .icon-row { display:flex; align-items:center; gap:8px; font-size:12px; color: var(--color-steel); text-transform:uppercase; letter-spacing:.4px; margin-bottom:6px; }
+.spec-panel-item .icon-row svg { width:15px; height:15px; color: var(--color-amber); }
+.spec-panel-item .value { font-family: var(--font-mono); font-weight:700; font-size:21px; }
+.spec-panel-item .value .unit { font-size:13px; font-weight:500; color: var(--color-steel); }
+.object-description h2 { font-family: var(--font-display); font-size:17px; margin-bottom:10px; }
+.object-description p { font-size:15px; color: var(--color-graphite-2); margin-bottom:8px; }
+
+/* ---------- Форма заявки ---------- */
+.lead-form { background: var(--color-white); border: var(--border); border-radius: var(--radius); padding:26px; box-shadow: var(--shadow); }
+.lead-form h2 { font-family: var(--font-display); font-size:19px; margin:0 0 4px; font-weight:700; }
+.lead-form .form-sub { font-size:13.5px; color: var(--color-steel); margin-bottom:20px; }
+.form-group { margin-bottom:16px; }
+.form-group label { display:block; font-size:13px; font-weight:600; margin-bottom:6px; }
+.form-group input, .form-group textarea { width:100%; padding:10px 12px; border: var(--border); border-radius: var(--radius); font-family:inherit; font-size:14px; background: var(--color-paper); }
+.form-group textarea { resize:vertical; min-height:80px; }
+.form-submit { width:100%; padding:13px; background: var(--color-graphite); color:#fff; border:none; border-radius: var(--radius); font-weight:700; font-size:14.5px; letter-spacing:.3px; border-bottom:3px solid var(--color-amber); }
+.form-submit:hover { background: var(--color-graphite-2); }
+.form-note { font-size:12px; color: var(--color-steel-light); margin-top:12px; text-align:center; }
+.form-success { display:none; background: var(--color-green-bg); color: var(--color-green); border-radius: var(--radius); padding:16px; font-size:14px; text-align:center; }
+
+/* ---------- Подвал ---------- */
+.site-footer { background: var(--color-graphite); color: var(--color-steel-light); }
+.site-footer .container { padding:32px; display:flex; align-items:center; justify-content:space-between; font-size:13px; }
+.site-footer a:hover { color: var(--color-amber); }
+
+/* ---------- Адаптивность ---------- */
+@media (max-width: 960px) {
+  .property-grid { grid-template-columns: repeat(2,1fr); }
+  .filter-panel { grid-template-columns: 1fr 1fr; }
+  .object-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .site-header .container { flex-wrap:wrap; height:auto; padding:16px 20px; gap:12px; }
+  .site-nav { gap:18px; font-size:13px; }
+  .site-nav .nav-phone { border-left:none; padding-left:0; }
+  .container { padding:0 20px; }
+  .page-hero h1 { font-size:28px; }
+  .property-grid { grid-template-columns: 1fr; }
+  .filter-panel { grid-template-columns: 1fr; }
+  .spec-panel-grid { grid-template-columns: 1fr; }
+  .spec-panel-item:nth-child(2n) { border-right:1px solid #e2e3df; }
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-amber); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) { * { transition:none!important; animation:none!important; } }
+</style>
+</head>
+<body>
+<!-- Скрытая форма-шаблон: по ней Netlify регистрирует приём заявок -->
+<form name="lead" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name"><input type="text" name="phone"><input type="email" name="email">
+  <input type="text" name="company"><textarea name="message"></textarea><input type="text" name="object">
+</form>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#/" class="brand" data-nav="catalog">
+      <span class="brand-mark">ТК</span>
+      <span class="brand-text">
+        <div class="brand-name">Технопарк Калиново</div>
+        <div class="brand-tagline">Аренда производственных и складских площадей</div>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="#/" data-nav="catalog">Каталог</a>
+      <a href="#/about" data-nav="about">О компании</a>
+      <a href="#/contacts" data-nav="contacts">Контакты</a>
+      <a class="nav-phone" href="tel:+74967310450">8 (4967) 31-04-50</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= КАТАЛОГ ================= -->
+  <section data-view="catalog">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Каталог объектов</div>
+        <h1>Помещения с производственной электрической мощностью</h1>
+        <p>Склады и производственные площади в аренду. У каждого объекта указаны площадь, электрическая мощность и высота потолков — чтобы вы сразу видели, подходит ли помещение под оборудование.</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="filter-panel">
+        <div class="filter-field">
+          <label for="filterType">Тип помещения</label>
+          <select id="filterType">
+            <option value="all">Все типы</option>
+            <option value="warehouse">Склад</option>
+            <option value="production">Производство</option>
+            <option value="office">Офис</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label>Площадь, м²</label>
+          <div class="filter-range"><input type="number" id="areaFrom" placeholder="от"><input type="number" id="areaTo" placeholder="до"></div>
+        </div>
+        <div class="filter-field">
+          <label>Мощность, кВт</label>
+          <div class="filter-range"><input type="number" id="powerFrom" placeholder="от"><input type="number" id="powerTo" placeholder="до"></div>
+        </div>
+        <div class="filter-field"><label>&nbsp;</label></div>
+        <button class="filter-reset" id="resetBtn">Сбросить</button>
+      </div>
+      <div class="results-summary">
+        <span>Всего объектов: <strong id="totalCount">—</strong></span>
+        <span>Свободно: <strong id="freeCount">—</strong></span>
+      </div>
+      <div class="property-grid" id="propertyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= ОБЪЕКТ ================= -->
+  <section data-view="object">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/" data-nav="catalog">Каталог</a> / <span id="breadcrumbName">Объект</span></div>
+      <div class="object-layout" id="objectRoot"></div>
+    </div>
+  </section>
+
+  <!-- ================= О КОМПАНИИ ================= -->
+  <section data-view="about">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">О компании</div>
+        <h1>Сдаём производственные и складские площади</h1>
+        <p>Технопарк Калиново — производственно-складской комплекс в г.о. Серпухов Московской области. Сдаём в аренду отапливаемые помещения под производство, склад и лёгкую промышленность с подведённой электрической мощностью, удобным подъездом для грузового транспорта и гибкими условиями договора.</p>
+      </div>
+    </section>
+    <div class="container" style="padding: 48px 0 64px; max-width: 760px;">
+      <div class="spec-panel">
+        <div class="spec-panel-header"><span>Компания в цифрах</span></div>
+        <div class="spec-panel-grid">
+          <div class="spec-panel-item"><div class="icon-row">На рынке</div><div class="value">5 <span class="unit">лет</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">Объектов в портфеле</div><div class="value">7</div></div>
+          <div class="spec-panel-item"><div class="icon-row">Суммарная площадь</div><div class="value">50 000 <span class="unit">м²</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">Электрическая мощность на территории</div><div class="value">7 <span class="unit">МВт</span></div></div>
+        </div>
+      </div>
+      <h2 style="font-family: var(--font-display); margin-top: 40px;">Почему арендуют у нас</h2>
+      <p style="color: var(--color-steel);">Высокая электрическая мощность для оборудования, удобная логистика, гибкие условия договора, готовность помещений к заезду.</p>
+    </div>
+  </section>
+
+  <!-- ================= КОНТАКТЫ ================= -->
+  <section data-view="contacts">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Контакты</div>
+        <h1>Свяжитесь с нами</h1>
+        <p>Ответим на вопросы по объектам, договору аренды и подключению электрической мощности.</p>
+      </div>
+    </section>
+    <div class="container" style="padding: 48px 0 64px;">
+      <div class="object-layout">
+        <div class="spec-panel">
+          <div class="spec-panel-header"><span>Реквизиты для связи</span></div>
+          <div style="padding:24px;">
+            <p style="margin:0 0 16px;"><strong>Телефон:</strong> <a href="tel:+74967310450" style="color:var(--color-amber);font-weight:600;">8 (4967) 31-04-50</a></p>
+            <p style="margin:0 0 16px;"><strong>Email:</strong> ao-sputnik@sputnikserp.ru</p>
+            <p style="margin:0 0 16px;"><strong>Адрес офиса:</strong> Московская область, г.о. Серпухов, д. Калиново, квартал-А стр.1</p>
+            <p style="margin:0;"><strong>Директор:</strong> Иконников Владимир Юрьевич, <a href="tel:+79264606016" style="color:var(--color-amber);font-weight:600;white-space:nowrap;">8 926 460-60-16</a></p>
+          </div>
+        </div>
+        <div class="lead-form">
+          <h2>Свободная заявка</h2>
+          <div class="form-sub">Если вас интересует несколько объектов сразу — напишите нам</div>
+          <form id="contactForm">
+            <div class="form-group"><label for="cName">Имя *</label><input type="text" id="cName" placeholder="Иван Иванов" required></div>
+            <div class="form-group"><label for="cPhone">Телефон *</label><input type="tel" id="cPhone" placeholder="+7 (000) 000-00-00" required></div>
+            <div class="form-group"><label for="cMessage">Сообщение</label><textarea id="cMessage" placeholder="Расскажите о ваших потребностях..."></textarea></div>
+            <button type="submit" class="form-submit">Отправить</button>
+          </form>
+          <div class="form-success" id="contactSuccess">Спасибо! Мы получили ваше сообщение и скоро свяжемся с вами.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-view="admin">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Только для владельца</div>
+        <h1>Панель управления</h1>
+        <p>Здесь можно менять цену, статус, метраж и другие параметры объектов без обращения к разработчику.</p>
+      </div>
+    </section>
+    <div class="container" style="padding: 48px 0 64px;">
+      <div class="spec-panel" id="adminRoot" style="max-width:640px;margin:0 auto;"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Технопарк Калиново. Аренда коммерческой недвижимости.</span>
+    <a href="#/contacts" data-nav="contacts">Связаться с нами</a>
+    <a href="#/admin" data-nav="admin" style="opacity:.45;font-size:12px;margin-left:16px;">Панель управления</a>
+  </div>
+</footer>
+
+<!-- Скрытая форма для обнаружения Netlify Forms (JS-формы отправляют сюда же, form-name="lead") -->
+<form name="lead" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="text" name="name">
+  <input type="tel" name="phone">
+  <input type="email" name="email">
+  <input type="text" name="company">
+  <textarea name="message"></textarea>
+  <input type="text" name="object">
+  <input type="text" name="bot-field">
+</form>
+
+<script>
+// =========================================================================
+// ДАННЫЕ ПО ОБЪЕКТАМ — редактируйте только этот массив
+// =========================================================================
+const PROPERTIES = [
+  { id:"kmc-1070", name:"КМЦ 1070", status:"free", type:"production", typeLabel:"Производство", price:428000, vat:true, area:1070, power:150, height:6, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
+    description:"Административно-складской комплекс с отдельным входом, парковкой для грузового транспорта и подведённой электрической мощностью, достаточной для установки производственного оборудования.",
+    images:["kmc-1070-1.jpg","kmc-1070-5.jpg","kmc-1070-6.jpg","kmc-1070-8.jpg","kmc-1070-10.jpg","kmc-1070-7.jpg","kmc-1070-9.jpg","kmc-1070-2.jpg","kmc-1070-4.jpg","kmc-1070-3.jpg","kmc-1070-11.jpg"] },
+  { id:"kmc-1400", name:"КМЦ 1400", status:"free", type:"warehouse", typeLabel:"Склад", price:560000, vat:true, area:1400, power:150, height:7.5, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
+    description:"Складской комплекс площадью 1400 м² с высокими потолками (7,5 м), удобен для паллетного хранения и организации логистического узла.",
+    images:["kmc-1400-1.jpg","kmc-1400-2.jpg","kmc-1400-3.jpg","kmc-1400-4.jpg","kmc-1400-5.jpg","kmc-1400-6.jpg","kmc-1400-7.jpg"] },
+  { id:"kmc-1440", name:"КМЦ 1440", status:"free", type:"production", typeLabel:"Производство", price:576000, vat:true, area:1440, power:400, height:6, gateHeight:4, gateWidth:4, gateType:"механические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
+    description:"Производственное помещение с усиленной электрической мощностью 400 кВт — подходит для энергоёмкого оборудования.",
+    images:["kmc-1440-1.jpg","kmc-1440-2.jpg","kmc-1440-3.jpg","kmc-1440-4.jpg","kmc-1440-5.jpg"] },
+  { id:"object-4", name:"Мех-цех 250", status:"free", type:"warehouse", typeLabel:"Склад", price:100000, vat:true, area:250, power:80, height:5, gateHeight:4, gateWidth:3.5, gateType:"механические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново",
+    description:"Небольшое помещение с хорошей мощностью, подойдёт под небольшое производство или склад.",
+    images:["object-4-4.jpg","object-4-5.jpg","object-4-2.jpg","object-4-3.jpg","object-4-1.jpg","object-4-6.jpg"] },
+  { id:"object-5", name:"Зарядная", status:"free", type:"production", typeLabel:"Производство", price:280000, vat:true, area:700, power:350, height:5, gateHeight:4, gateWidth:4, gateType:"механические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
+    description:"Отдельно стоящее здание с офисными и производственными помещениями, тремя воротами и кран-балкой 3,5 т, в д. Калиново.",
+    images:[] },
+  { id:"object-6", name:"Компрессорный цех", status:"rented", type:"warehouse", typeLabel:"Склад", price:368000, vat:true, area:920, power:150, height:6, gateHeight:4.5, gateWidth:4, gateType:"автоматические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
+    description:"Отличное помещение под ярусное хранение или производство.",
+    images:["object-6-2.jpg","object-6-3.jpg","object-6-4.jpg","object-6-5.jpg"] },
+  { id:"object-7", name:"Цех 26", status:"free", type:"production", typeLabel:"Производство", price:2496000, vat:true, area:5200, power:500, height:7, gateHeight:4.4, gateWidth:3.5, gateType:"механические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
+    description:"Производственно-складское помещение с отдельными блоками прямоугольной формы. Возможность установки кран-балки.",
+    images:["object-7-1.jpg","object-7-2.jpg","object-7-4.jpg","object-7-7.jpg","object-7-8.jpg","object-7-3.jpg","object-7-6.jpg","object-7-5.jpg","object-7-9.jpg"] },
+];
+
+// =========================================================================
+// ПРАВКИ ВЛАДЕЛЬЦА (панель управления, хранятся в этом браузере)
+// =========================================================================
+const API_GET  = "/.netlify/functions/objects";
+const API_SAVE = "/.netlify/functions/objects";
+
+// Загрузка данных из облака (Netlify Blobs). Если облако пустое или недоступно —
+// остаются встроенные значения массива PROPERTIES (значения по умолчанию).
+async function loadCloudData(){
+  try {
+    const r = await fetch(API_GET, { cache: "no-store" });
+    if (!r.ok) return;
+    const data = await r.json();
+    if (Array.isArray(data) && data.length){
+      PROPERTIES.length = 0;
+      data.forEach(o => PROPERTIES.push(o));
+    }
+  } catch(e){ /* нет связи — работаем на встроенных данных */ }
+}
+
+// Сохранение всего набора объектов в облако (нужен пароль-токен из панели)
+async function saveCloudData(){
+  const token = sessionStorage.getItem("admin_token") || "";
+  return fetch(API_SAVE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Authorization": "Bearer " + token },
+    body: JSON.stringify(PROPERTIES)
+  });
+}
+
+function typeLabelFor(type){
+  return type === "warehouse" ? "Склад" : type === "production" ? "Производство" : "Офис";
+}
+
+function renderAdmin(){
+  const root = document.getElementById("adminRoot");
+  const unlocked = sessionStorage.getItem("sputnik_admin_ok") === "1";
+  if (!unlocked){
+    root.innerHTML = `
+      <div class="spec-panel-header"><span>Вход в панель управления</span></div>
+      <div style="padding:24px;">
+        <div class="form-group"><label for="adminPass">Пароль</label><input type="password" id="adminPass"></div>
+        <button type="button" class="form-submit" id="adminLoginBtn">Войти</button>
+        <div id="adminLoginError" style="color:#c0392b;margin-top:10px;font-size:14px;"></div>
+      </div>`;
+    document.getElementById("adminLoginBtn").addEventListener("click", () => {
+      const pass = document.getElementById("adminPass").value;
+      if (!pass){ document.getElementById("adminLoginError").textContent = "Введите пароль"; return; }
+      sessionStorage.setItem("admin_token", pass);
+      sessionStorage.setItem("sputnik_admin_ok", "1");
+      renderAdmin();
+    });
+    document.getElementById("adminPass").addEventListener("keydown", e => {
+      if (e.key === "Enter") document.getElementById("adminLoginBtn").click();
+    });
+    return;
+  }
+
+  root.innerHTML = `
+    <div class="spec-panel-header"><span>Панель управления объектами</span></div>
+    <div style="padding:24px;">
+      <div class="form-group"><label for="adminObjectSelect">Объект</label>
+        <select id="adminObjectSelect">${PROPERTIES.map(p => `<option value="${p.id}">${p.name}</option>`).join("")}</select>
+      </div>
+      <div id="adminFields"></div>
+      <button type="button" class="form-submit" id="adminSaveBtn" style="margin-top:8px;">Сохранить изменения</button>
+      <span id="adminSaved" style="margin-left:14px;color:#2e7d32;display:none;font-size:14px;">Сохранено ✓</span>
+      <hr style="margin:28px 0;border:none;border-top:1px solid var(--color-graphite-2);">
+      <div style="font-size:13px;color:var(--color-steel);margin-bottom:10px;">
+        Резервная копия правок — на случай переустановки браузера или переноса на другое устройство:
+      </div>
+      <button type="button" class="form-submit" id="adminExportBtn" style="background:transparent;border:1px solid var(--color-amber);color:var(--color-graphite);">Экспорт правок</button>
+      <button type="button" class="form-submit" id="adminImportBtn" style="background:transparent;border:1px solid var(--color-amber);color:var(--color-graphite);margin-left:10px;">Импорт правок</button>
+      <textarea id="adminBackupArea" style="width:100%;height:110px;margin-top:12px;font-family:var(--font-mono);font-size:12px;padding:10px;" placeholder="Здесь появится резервная копия JSON, либо сюда можно её вставить для импорта"></textarea>
+    </div>`;
+
+  function renderFields(id){
+    const p = PROPERTIES.find(x => x.id === id);
+    document.getElementById("adminFields").innerHTML = `
+      <div class="form-group"><label>Название</label><input type="text" id="f_name" value="${p.name}"></div>
+      <div class="form-group"><label>Статус</label>
+        <select id="f_status">
+          <option value="free" ${p.status==="free"?"selected":""}>Свободно</option>
+          <option value="rented" ${p.status==="rented"?"selected":""}>Арендовано</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Тип</label>
+        <select id="f_type">
+          <option value="office" ${p.type==="office"?"selected":""}>Офис</option>
+          <option value="warehouse" ${p.type==="warehouse"?"selected":""}>Склад</option>
+          <option value="production" ${p.type==="production"?"selected":""}>Производство</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Цена, ₽/мес</label><input type="number" id="f_price" value="${p.price}"></div>
+      <div class="form-group"><label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" id="f_vat" ${p.vat?"checked":""} style="width:auto;"> Цена указана с НДС</label></div>
+      <div class="form-group"><label>Площадь, м²</label><input type="number" step="0.1" id="f_area" value="${p.area}"></div>
+      <div class="form-group"><label>Мощность, кВт</label><input type="number" id="f_power" value="${p.power}"></div>
+      <div class="form-group"><label>Высота потолков, м</label><input type="number" step="0.1" id="f_height" value="${p.height}"></div>
+      <div class="form-group"><label>Высота ворот, м</label><input type="number" step="0.1" id="f_gateHeight" value="${p.gateHeight}"></div>
+      <div class="form-group"><label>Ширина ворот, м</label><input type="number" step="0.1" id="f_gateWidth" value="${p.gateWidth}"></div>
+      <div class="form-group"><label>Тип ворот</label>
+        <select id="f_gateType">
+          <option value="механические" ${p.gateType==="механические"?"selected":""}>Механические</option>
+          <option value="автоматические" ${p.gateType==="автоматические"?"selected":""}>Автоматические</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Этаж</label><input type="number" id="f_floor" value="${p.floor}"></div>
+      <div class="form-group"><label>Адрес (короткий)</label><input type="text" id="f_address" value="${p.address}"></div>
+      <div class="form-group"><label>Адрес (полный)</label><input type="text" id="f_fullAddress" value="${p.fullAddress}"></div>
+      <div class="form-group"><label>Описание</label><textarea id="f_description" style="height:90px;">${p.description}</textarea></div>
+      <div class="form-group"><label>Фотографии (первое — обложка в каталоге)</label>
+        <div id="photoList" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;"></div>
+        <input type="file" id="photoAdd" accept="image/*" multiple style="display:none;">
+        <button type="button" class="form-submit" id="photoAddBtn" style="background:transparent;border:1px solid var(--color-amber);color:var(--color-graphite);">+ Добавить фото</button>
+      </div>
+    `;
+    renderPhotoList(p);
+  }
+
+  function renderPhotoList(p){
+    const wrap = document.getElementById("photoList");
+    if (!wrap) return;
+    const imgs = p.images || [];
+    wrap.innerHTML = imgs.length
+      ? imgs.map((src,i) => `
+        <div style="position:relative;width:110px;">
+          <img src="${src}" style="width:110px;height:80px;object-fit:cover;border-radius:3px;border:1px solid #d4d6d1;">
+          <div style="display:flex;gap:4px;margin-top:4px;">
+            <button type="button" data-ph="left" data-i="${i}" title="Сдвинуть влево" style="flex:1;padding:2px;font-size:12px;">◀</button>
+            <button type="button" data-ph="del" data-i="${i}" title="Удалить" style="flex:1;padding:2px;font-size:12px;color:#b23b2e;">✕</button>
+            <button type="button" data-ph="right" data-i="${i}" title="Сдвинуть вправо" style="flex:1;padding:2px;font-size:12px;">▶</button>
+          </div>
+        </div>`).join("")
+      : '<div style="font-size:13px;color:var(--color-steel);">Фото пока нет</div>';
+
+    wrap.querySelectorAll("button[data-ph]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const i = Number(btn.dataset.i);
+        const action = btn.dataset.ph;
+        if (action === "del") p.images.splice(i,1);
+        if (action === "left" && i > 0) [p.images[i-1], p.images[i]] = [p.images[i], p.images[i-1]];
+        if (action === "right" && i < p.images.length-1) [p.images[i+1], p.images[i]] = [p.images[i], p.images[i+1]];
+        renderPhotoList(p);
+      });
+    });
+
+    const addBtn = document.getElementById("photoAddBtn");
+    const addInput = document.getElementById("photoAdd");
+    addBtn.onclick = () => addInput.click();
+    addInput.onchange = () => {
+      const files = Array.from(addInput.files || []);
+      files.forEach(file => {
+        const img = new Image();
+        img.onload = () => {
+          const maxSide = 1600;
+          let w = img.width, h = img.height;
+          if (Math.max(w,h) > maxSide){ const k = maxSide/Math.max(w,h); w = Math.round(w*k); h = Math.round(h*k); }
+          const canvas = document.createElement("canvas");
+          canvas.width = w; canvas.height = h;
+          canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+          p.images = p.images || [];
+          p.images.push(canvas.toDataURL("image/jpeg", 0.78));
+          renderPhotoList(p);
+        };
+        img.src = URL.createObjectURL(file);
+      });
+      addInput.value = "";
+    };
+  }
+
+  const select = document.getElementById("adminObjectSelect");
+  renderFields(select.value);
+  select.addEventListener("change", () => renderFields(select.value));
+
+  document.getElementById("adminSaveBtn").addEventListener("click", async () => {
+    const id = select.value;
+    const type = document.getElementById("f_type").value;
+    const patch = {
+      name: document.getElementById("f_name").value,
+      status: document.getElementById("f_status").value,
+      type: type,
+      typeLabel: typeLabelFor(type),
+      price: Number(document.getElementById("f_price").value),
+      vat: document.getElementById("f_vat").checked,
+      area: Number(document.getElementById("f_area").value),
+      power: Number(document.getElementById("f_power").value),
+      height: Number(document.getElementById("f_height").value),
+      gateHeight: Number(document.getElementById("f_gateHeight").value),
+      gateWidth: Number(document.getElementById("f_gateWidth").value),
+      gateType: document.getElementById("f_gateType").value,
+      floor: Number(document.getElementById("f_floor").value),
+      address: document.getElementById("f_address").value,
+      fullAddress: document.getElementById("f_fullAddress").value,
+      description: document.getElementById("f_description").value,
+      images: (PROPERTIES.find(x => x.id === id).images || []).slice(),
+    };
+    Object.assign(PROPERTIES.find(x => x.id === id), patch);
+    select.querySelector(`option[value="${id}"]`).textContent = patch.name;
+    const saved = document.getElementById("adminSaved");
+    const btn = document.getElementById("adminSaveBtn");
+    btn.disabled = true;
+    saved.style.display = "inline"; saved.textContent = "Сохранение…"; saved.style.color = "var(--color-steel)";
+    try {
+      const r = await saveCloudData();
+      if (r.ok){
+        saved.textContent = "Сохранено для всех ✓"; saved.style.color = "#2e7d32";
+      } else if (r.status === 401){
+        saved.textContent = "Неверный пароль — войдите заново"; saved.style.color = "#c0392b";
+        sessionStorage.removeItem("sputnik_admin_ok");
+      } else {
+        saved.textContent = "Ошибка сохранения (" + r.status + ")"; saved.style.color = "#c0392b";
+      }
+    } catch(e){
+      saved.textContent = "Нет связи с сервером"; saved.style.color = "#c0392b";
+    }
+    btn.disabled = false;
+    setTimeout(() => { saved.style.display = "none"; }, 4000);
+  });
+
+  document.getElementById("adminExportBtn").addEventListener("click", () => {
+    document.getElementById("adminBackupArea").value = JSON.stringify(PROPERTIES, null, 2);
+  });
+  document.getElementById("adminImportBtn").addEventListener("click", async () => {
+    let data;
+    try { data = JSON.parse(document.getElementById("adminBackupArea").value || "[]"); }
+    catch(e){ alert("Не удалось прочитать JSON — проверьте формат"); return; }
+    if (!Array.isArray(data) || !data.length){ alert("Ожидается непустой массив объектов"); return; }
+    PROPERTIES.length = 0; data.forEach(o => PROPERTIES.push(o));
+    try {
+      const r = await saveCloudData();
+      alert(r.ok ? "Импортировано и сохранено для всех клиентов" : "Применено на странице, но в облако не сохранилось (" + r.status + ")");
+    } catch(e){ alert("Применено на странице, но нет связи с сервером"); }
+    renderFields(document.getElementById("adminObjectSelect").value);
+  });
+}
+const ICON_PLACEHOLDER = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8l9-5 9 5v13" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ICONS = {
+  area: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 9h5V4M20 15h-5v5"/></svg>`,
+  power: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>`,
+  height: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M8 6l4-3 4 3M8 18l4 3 4-3"/></svg>`,
+  floor: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M4 21V9l8-6 8 6v12"/></svg>`,
+  type: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13" stroke-linejoin="round"/></svg>`
+};
+
+function formatPrice(n){ return n.toLocaleString("ru-RU"); }
+function num(n){ return String(n).replace(".", ","); } // десятичный разделитель по-русски
+function priceHtml(p){ return formatPrice(p.price) + ' ₽<span class="per-month"> /мес</span>' + (p.vat ? ' <span class="vat-note">с НДС</span>' : ''); }
+function statusLabel(s){ return s === "free" ? "Свободно" : "Арендовано"; }
+
+// =========================================================================
+// КАТАЛОГ
+// =========================================================================
+function propertyCardHTML(p){
+  const index = PROPERTIES.findIndex(x => x.id === p.id);
+  const photo = p.images && p.images.length
+    ? `<img src="${p.images[0]}" alt="${p.name}" loading="lazy">`
+    : `<div class="photo-placeholder">${ICON_PLACEHOLDER}<span>ФОТО НЕ ЗАГРУЖЕНО</span></div>`;
+  const code = "ТК-" + String(index + 1).padStart(2, "0");
+  return `
+  <a class="property-card" href="#/object/${p.id}" data-nav="object" data-id="${p.id}">
+    <div class="card-photo">${photo}<span class="asset-tag">${code}</span><span class="status-badge ${p.status}">${statusLabel(p.status)}</span></div>
+    <div class="card-body">
+      <h3>${p.name}</h3>
+      <div class="card-address">${p.address}</div>
+      <div class="spec-strip">
+        <div class="spec"><div class="spec-value">${p.area}<span class="unit">м²</span></div><div class="spec-label">Площадь</div></div>
+        <div class="spec"><div class="spec-value">${p.power}<span class="unit">кВт</span></div><div class="spec-label">Мощность</div></div>
+        <div class="spec"><div class="spec-value">${num(p.height)}<span class="unit">м</span></div><div class="spec-label">Потолки</div></div>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">${priceHtml(p)}</div>
+        <div class="card-type-tag">${p.typeLabel}</div>
+      </div>
+    </div>
+  </a>`;
+}
+
+function renderCatalog(list){
+  const grid = document.getElementById("propertyGrid");
+  grid.innerHTML = list.length
+    ? list.map(propertyCardHTML).join("")
+    : `<div class="empty-state">Нет объектов, подходящих под выбранные условия. Попробуйте изменить фильтр.</div>`;
+}
+
+function applyFilters(){
+  const type = document.getElementById("filterType").value;
+  const areaFrom = parseFloat(document.getElementById("areaFrom").value) || 0;
+  const areaTo = parseFloat(document.getElementById("areaTo").value) || Infinity;
+  const powerFrom = parseFloat(document.getElementById("powerFrom").value) || 0;
+  const powerTo = parseFloat(document.getElementById("powerTo").value) || Infinity;
+  const filtered = PROPERTIES.filter(p =>
+    (type === "all" || p.type === type) &&
+    p.area >= areaFrom && p.area <= areaTo &&
+    p.power >= powerFrom && p.power <= powerTo
+  );
+  renderCatalog(filtered);
+}
+
+function updateSummary(){
+  document.getElementById("totalCount").textContent = PROPERTIES.length;
+  document.getElementById("freeCount").textContent = PROPERTIES.filter(p => p.status === "free").length;
+}
+
+function resetFilters(){
+  document.getElementById("filterType").value = "all";
+  ["areaFrom","areaTo","powerFrom","powerTo"].forEach(id => document.getElementById(id).value = "");
+  applyFilters();
+}
+
+// =========================================================================
+// СТРАНИЦА ОБЪЕКТА
+// =========================================================================
+let currentImages = [], currentIndex = 0;
+
+function renderGalleryFrame(){
+  const main = document.getElementById("galleryMain");
+  if (currentImages.length){
+    main.innerHTML = `
+      <div class="gallery-bg" style="background-image:url('${currentImages[currentIndex]}')"></div>
+      <img src="${currentImages[currentIndex]}" alt="Фото объекта">
+      <span class="gallery-counter">${currentIndex+1} / ${currentImages.length}</span>
+      ${currentImages.length > 1 ? `<button class="gallery-nav prev">‹</button><button class="gallery-nav next">›</button>` : ""}`;
+    if (currentImages.length > 1){
+      main.querySelector(".prev").addEventListener("click", () => { currentIndex = (currentIndex-1+currentImages.length)%currentImages.length; renderGalleryFrame(); });
+      main.querySelector(".next").addEventListener("click", () => { currentIndex = (currentIndex+1)%currentImages.length; renderGalleryFrame(); });
+    }
+  } else {
+    main.innerHTML = `<div class="photo-placeholder">${ICON_PLACEHOLDER}<span>ФОТОГРАФИИ БУДУТ ДОБАВЛЕНЫ</span></div>`;
+  }
+  const thumbs = document.getElementById("galleryThumbs");
+  if (currentImages.length > 1){
+    thumbs.innerHTML = currentImages.map((src,i) => `<button class="${i===currentIndex?"active":""}" data-i="${i}"><img src="${src}" alt="" loading="lazy"></button>`).join("");
+    thumbs.querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => { currentIndex = parseInt(btn.dataset.i,10); renderGalleryFrame(); }));
+  } else { thumbs.innerHTML = ""; }
+}
+
+function renderObject(id){
+  const p = PROPERTIES.find(item => item.id === id);
+  const root = document.getElementById("objectRoot");
+  if (!p){
+    root.innerHTML = `<div class="empty-state" style="grid-column:1/-1;padding:80px 20px;">Объект не найден.<br><a href="#/" data-nav="catalog" style="color:var(--color-amber);border-bottom:1px solid var(--color-amber);">Вернуться в каталог</a></div>`;
+    document.getElementById("breadcrumbName").textContent = "Не найдено";
+    return;
+  }
+  document.getElementById("breadcrumbName").textContent = p.name;
+  currentImages = p.images || []; currentIndex = 0;
+
+  root.innerHTML = `
+    <div>
+      <div class="gallery-main" id="galleryMain"></div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+      <div class="object-title-row">
+        <h1>${p.name}</h1>
+        <span class="status-badge ${p.status}" style="position:static;">${statusLabel(p.status)}</span>
+      </div>
+      <div class="object-price">${priceHtml(p)}</div>
+      <div class="object-address">📍 ${p.fullAddress} <span style="font-family:var(--font-mono);font-size:12px;color:var(--color-steel);margin-left:10px;">· инв. № ТК-${String(PROPERTIES.findIndex(x => x.id === p.id) + 1).padStart(2,"0")}</span></div>
+      <div class="spec-panel">
+        <div class="spec-panel-header"><span>Технический паспорт объекта</span></div>
+        <div class="spec-panel-grid">
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.area} Площадь</div><div class="value">${p.area} <span class="unit">м²</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.type} Тип</div><div class="value" style="font-size:17px;">${p.typeLabel}</div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.power} Эл. мощность</div><div class="value">${p.power} <span class="unit">кВт</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.floor} Этаж</div><div class="value">${p.floor}</div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.height} Высота потолков</div><div class="value">${num(p.height)} <span class="unit">м</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.height} Высота ворот</div><div class="value">${num(p.gateHeight)} <span class="unit">м</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.area} Ширина ворот</div><div class="value">${num(p.gateWidth)} <span class="unit">м</span></div></div>
+          <div class="spec-panel-item"><div class="icon-row">Тип ворот</div><div class="value" style="font-size:17px;">${p.gateType}</div></div>
+        </div>
+      </div>
+      <div class="object-description"><h2>Описание</h2><p>${p.description}</p></div>
+    </div>
+    <div class="lead-form">
+      <h2>Подать заявку</h2>
+      <div class="form-sub">Заполните форму — мы свяжемся с вами</div>
+      <form id="leadForm">
+        <div class="form-group"><label for="leadName">Имя *</label><input type="text" id="leadName" placeholder="Иван Иванов" required></div>
+        <div class="form-group"><label for="leadPhone">Телефон *</label><input type="tel" id="leadPhone" placeholder="+7 (000) 000-00-00" required></div>
+        <div class="form-group"><label for="leadEmail">Email *</label><input type="email" id="leadEmail" placeholder="mail@example.com" required></div>
+        <div class="form-group"><label for="leadCompany">Компания</label><input type="text" id="leadCompany" placeholder="ООО «Компания»"></div>
+        <div class="form-group"><label for="leadMessage">Сообщение</label><textarea id="leadMessage" placeholder="Расскажите о ваших потребностях..."></textarea></div>
+        <button type="submit" class="form-submit">Отправить заявку</button>
+        <div class="form-note">Отправляя форму, вы соглашаетесь на обработку персональных данных</div>
+      </form>
+      <div class="form-success" id="formSuccess">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</div>
+    </div>`;
+
+  renderGalleryFrame();
+  document.getElementById("leadForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const data = new URLSearchParams({
+      "form-name": "lead",
+      name: document.getElementById("leadName").value,
+      phone: document.getElementById("leadPhone").value,
+      email: document.getElementById("leadEmail").value,
+      company: document.getElementById("leadCompany").value,
+      message: document.getElementById("leadMessage").value,
+      object: p.name,
+    });
+    fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body: data.toString() })
+      .catch(() => {});
+    document.getElementById("leadForm").style.display = "none";
+    document.getElementById("formSuccess").style.display = "block";
+  });
+}
+
+// =========================================================================
+// РОУТИНГ (hash-based, всё в одном файле — без сервера и без API)
+// =========================================================================
+function showView(name){
+  document.querySelectorAll("[data-view]").forEach(el => el.classList.toggle("active", el.dataset.view === name));
+  document.querySelectorAll("[data-nav]").forEach(el => el.classList.toggle("active", el.dataset.nav === name && !el.dataset.id));
+  window.scrollTo(0,0);
+}
+
+function router(){
+  const hash = window.location.hash.replace(/^#/,"") || "/";
+  const objectMatch = hash.match(/^\/object\/(.+)$/);
+  if (objectMatch){
+    showView("object");
+    renderObject(decodeURIComponent(objectMatch[1]));
+  } else if (hash === "/about"){
+    showView("about");
+  } else if (hash === "/contacts"){
+    showView("contacts");
+  } else if (hash === "/admin"){
+    showView("admin");
+    renderAdmin();
+  } else {
+    showView("catalog");
+    renderCatalog(PROPERTIES);
+    updateSummary();
+  }
+}
+
+window.addEventListener("hashchange", router);
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadCloudData();
+  renderCatalog(PROPERTIES);
+  updateSummary();
+  document.getElementById("filterType").addEventListener("change", applyFilters);
+  document.getElementById("areaFrom").addEventListener("input", applyFilters);
+  document.getElementById("areaTo").addEventListener("input", applyFilters);
+  document.getElementById("powerFrom").addEventListener("input", applyFilters);
+  document.getElementById("powerTo").addEventListener("input", applyFilters);
+  document.getElementById("resetBtn").addEventListener("click", resetFilters);
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const data = new URLSearchParams({
+      "form-name": "lead",
+      name: document.getElementById("cName").value,
+      phone: document.getElementById("cPhone").value,
+      email: "",
+      company: "",
+      message: document.getElementById("cMessage").value,
+      object: "Свободная заявка (контакты)",
+    });
+    fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body: data.toString() })
+      .catch(() => {});
+    this.style.display = "none";
+    document.getElementById("contactSuccess").style.display = "block";
+  });
+  router();
+});
+</script>
+</body>
+</html>
