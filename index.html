@@ -282,9 +282,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <script>
   // Цели Метрики: lead_form (заявка), phone_click (клик по tel:)
   window.reachMetrika = function(goal){
-    try {
-      if (typeof ym === "function") ym(114339742, "reachGoal", goal);
-    } catch (e) {}
+    var fire = function(){
+      try {
+        if (typeof ym === "function") {
+          ym(114339742, "reachGoal", goal);
+          return true;
+        }
+      } catch (e) {}
+      return false;
+    };
+    if (fire()) return;
+    // если tag.js ещё не подгрузился — повторим
+    var n = 0;
+    var t = setInterval(function(){
+      n++;
+      if (fire() || n > 20) clearInterval(t);
+    }, 300);
   };
 </script>
 </head>
