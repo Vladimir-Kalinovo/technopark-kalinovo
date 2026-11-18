@@ -19,6 +19,44 @@
   status = 301
   force = true
 
+# Админка остаётся в SPA на index.html (без публичной ссылки в футере)
+[[redirects]]
+  from = "/admin"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
+  to = "/index.html"
+  status = 200
+
+# Старые hash-URL поисковиками почти не открываются как путь;
+# на всякий случай нормализуем частые пути без trailing slash
+[[redirects]]
+  from = "/o-kompanii"
+  to = "/o-kompanii/"
+  status = 301
+
+[[redirects]]
+  from = "/contacts"
+  to = "/contacts/"
+  status = 301
+
+[[redirects]]
+  from = "/usloviya-arendy"
+  to = "/usloviya-arendy/"
+  status = 301
+
+[[redirects]]
+  from = "/arenda-pomeshcheniya-pod-sklad"
+  to = "/arenda-pomeshcheniya-pod-sklad/"
+  status = 301
+
+[[redirects]]
+  from = "/arenda-pomeshcheniya-pod-proizvodstvo"
+  to = "/arenda-pomeshcheniya-pod-proizvodstvo/"
+  status = 301
+
 # Заголовки безопасности для всех страниц
 [[headers]]
   for = "/*"

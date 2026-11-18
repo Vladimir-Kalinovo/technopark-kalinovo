@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: https://technopark-kalinovo.ru
+Sitemap: https://technopark-kalinovo.ru/sitemap.xml
