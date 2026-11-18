@@ -9,6 +9,16 @@
 [functions]
   node_bundler = "esbuild"
 
+# Канонический адрес главной: /index.html → / (301).
+# force = true нужен, потому что файл index.html реально существует.
+# Правило срабатывает только на путь /index.html — запросы к "/" (включая
+# POST формы Netlify и fetch каталога) не затрагиваются; query-строка сохраняется.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
 # Заголовки безопасности для всех страниц
 [[headers]]
   for = "/*"
