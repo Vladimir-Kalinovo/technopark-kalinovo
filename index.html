@@ -277,6 +277,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/114339742" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<script>
+  // Цели Метрики: lead_form (заявка), phone_click (клик по tel:)
+  window.reachMetrika = function(goal){
+    try {
+      if (typeof ym === "function") ym(114339742, "reachGoal", goal);
+    } catch (e) {}
+  };
+</script>
 </head>
 <body>
 <!-- Скрытая форма-шаблон: по ней Netlify регистрирует приём заявок -->
@@ -982,6 +990,7 @@ function renderObject(id){
     });
     fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body: data.toString() })
       .catch(() => {});
+    if (typeof reachMetrika === "function") reachMetrika("lead_form");
     document.getElementById("leadForm").style.display = "none";
     document.getElementById("formSuccess").style.display = "block";
   });
@@ -1037,8 +1046,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body: data.toString() })
       .catch(() => {});
+    if (typeof reachMetrika === "function") reachMetrika("lead_form");
     this.style.display = "none";
     document.getElementById("contactSuccess").style.display = "block";
+  });
+
+  // Клик по телефону → цель phone_click
+  document.addEventListener("click", function(e){
+    const a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!a) return;
+    if (typeof reachMetrika === "function") reachMetrika("phone_click");
   });
 
   // Полноэкранный просмотр фото (лайтбокс)
