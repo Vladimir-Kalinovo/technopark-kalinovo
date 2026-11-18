@@ -472,7 +472,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 // =========================================================================
 // ДАННЫЕ ПО ОБЪЕКТАМ — редактируйте только этот массив
 // =========================================================================
-const PROPERTIES = [
+const DEFAULT_PROPERTIES = [
   { id:"kmc-1070", name:"КМЦ 1070", status:"free", type:"production", typeLabel:"Производство", price:428000, vat:true, area:1070, power:150, height:6, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
     description:"Административно-складской комплекс с отдельным входом, парковкой для грузового транспорта и подведённой электрической мощностью, достаточной для установки производственного оборудования.",
@@ -485,7 +485,7 @@ const PROPERTIES = [
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
     description:"Производственное помещение с усиленной электрической мощностью 400 кВт — подходит для энергоёмкого оборудования.",
     images:["kmc-1440-1.jpg","kmc-1440-2.jpg","kmc-1440-3.jpg","kmc-1440-4.jpg","kmc-1440-5.jpg"] },
-  { id:"object-4", name:"Мех-цех 250", status:"free", type:"warehouse", typeLabel:"Склад", price:100000, vat:true, area:250, power:80, height:5, gateHeight:4, gateWidth:3.5, gateType:"механические", floor:1,
+  { id:"object-4", name:"Мех-корпус 250", status:"free", type:"warehouse", typeLabel:"Склад", price:100000, vat:true, area:250, power:80, height:5, gateHeight:4, gateWidth:3.5, gateType:"механические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново",
     description:"Небольшое помещение с хорошей мощностью, подойдёт под небольшое производство или склад.",
     images:["object-4-4.jpg","object-4-5.jpg","object-4-2.jpg","object-4-3.jpg","object-4-1.jpg","object-4-6.jpg"] },
@@ -493,19 +493,37 @@ const PROPERTIES = [
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
     description:"Отдельно стоящее здание с офисными и производственными помещениями, тремя воротами и кран-балкой 3,5 т, в д. Калиново.",
     images:["object-5-1.jpg","object-5-2.jpg","object-5-3.jpg","object-5-4.jpg","object-5-5.jpg","object-5-6.jpg","object-5-7.jpg"] },
-  { id:"object-6", name:"Компрессорный цех", status:"rented", type:"warehouse", typeLabel:"Склад", price:368000, vat:true, area:920, power:150, height:6, gateHeight:4.5, gateWidth:4, gateType:"автоматические", floor:1,
+  { id:"object-6", name:"Компрессорный корпус", status:"rented", type:"warehouse", typeLabel:"Склад", price:368000, vat:true, area:920, power:150, height:6, gateHeight:4.5, gateWidth:4, gateType:"автоматические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
     description:"Отличное помещение под ярусное хранение или производство.",
     images:["object-6-2.jpg","object-6-3.jpg","object-6-4.jpg","object-6-5.jpg"] },
-  { id:"object-7", name:"Цех 26", status:"free", type:"production", typeLabel:"Производство", price:2496000, vat:true, area:5200, power:500, height:7, gateHeight:4.4, gateWidth:3.5, gateType:"механические", floor:1,
+  { id:"object-7", name:"Корпус 26", status:"free", type:"production", typeLabel:"Производство", price:2496000, vat:true, area:5200, power:500, height:7, gateHeight:4.4, gateWidth:3.5, gateType:"механические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, стр.1",
     description:"Производственно-складское помещение с отдельными блоками прямоугольной формы. Возможность установки кран-балки.",
     images:["object-7-1.jpg","object-7-2.jpg","object-7-4.jpg","object-7-7.jpg","object-7-8.jpg","object-7-3.jpg","object-7-6.jpg","object-7-5.jpg","object-7-9.jpg"] },
-  { id:"object-8", name:"Мех-цех 445", status:"free", type:"production", typeLabel:"Производство", price:178000, vat:true, area:445, power:80, height:5, gateHeight:3.5, gateWidth:4, gateType:"механические", floor:1,
+  { id:"object-8", name:"Мех-корпус 445", status:"free", type:"production", typeLabel:"Производство", price:178000, vat:true, area:445, power:80, height:5, gateHeight:3.5, gateWidth:4, gateType:"механические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново",
-    description:"Бывший механический цех с кран-балкой 3,5 т, естественным освещением и подведённой электрической мощностью. Распашные механические ворота 4×3,5 м. Подойдёт под небольшое производство или склад.",
+    description:"Бывший механический корпус с кран-балкой 3,5 т, естественным освещением и подведённой электрической мощностью. Распашные механические ворота 4×3,5 м. Подойдёт под небольшое производство или склад.",
     images:["object-8-1.jpg","object-8-2.jpg","object-8-3.jpg","object-8-4.jpg","object-8-5.jpg","object-8-6.jpg"] },
+  { id:"korpus-1060", name:"Корпус 1060", status:"free", type:"production", typeLabel:"Производство", price:508800, vat:true, area:1060, power:150, height:7, gateHeight:0, gateWidth:0, gateType:"—", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново",
+    description:"Производственное помещение 1060 м² без отопления. Высота потолков 7 м, электрическая мощность 150 кВт с возможностью увеличения. Ставка 480 ₽/м².",
+    images:["korpus-1060-1.jpg","korpus-1060-2.jpg"] },
+  { id:"korpus-27", name:"Корпус 27", status:"free", type:"production", typeLabel:"Производство", price:3500000, vat:true, area:7000, power:1000, height:7, gateHeight:4.4, gateWidth:3.5, gateType:"электрические", floor:1,
+    address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново",
+    description:"Корпус 7000 м² с прилегающей открытой площадкой. Газовое отопление, высота потолков 7 м, ворота 4,4×3,5 м (электрические), мощность 1 МВт. Ставка 500 ₽/м² с НДС.",
+    images:["korpus-27-1.jpg","korpus-27-2.jpg","korpus-27-3.jpg"] },
 ];
+
+const PROPERTIES = DEFAULT_PROPERTIES.map(o => ({ ...o, images: (o.images || []).slice() }));
+
+// Цех → Корпус (названия карточек); не трогаем правки владельца вроде «КМЦ 856»
+const NAME_RENAMES = {
+  "object-4": "Мех-корпус 250",
+  "object-6": "Компрессорный корпус",
+  "object-7": "Корпус 26",
+  "object-8": "Мех-корпус 445"
+};
 
 // =========================================================================
 // ПРАВКИ ВЛАДЕЛЬЦА (панель управления, хранятся в этом браузере)
@@ -513,17 +531,34 @@ const PROPERTIES = [
 const API_GET  = "/.netlify/functions/objects";
 const API_SAVE = "/.netlify/functions/objects";
 
-// Загрузка данных из облака (Netlify Blobs). Если облако пустое или недоступно —
-// остаются встроенные значения массива PROPERTIES (значения по умолчанию).
+// Загрузка из облака + подмешивание новых объектов из DEFAULT_PROPERTIES
 async function loadCloudData(){
   try {
     const r = await fetch(API_GET, { cache: "no-store" });
     if (!r.ok) return;
     const data = await r.json();
-    if (Array.isArray(data) && data.length){
-      PROPERTIES.length = 0;
-      data.forEach(o => PROPERTIES.push(o));
-    }
+    if (!Array.isArray(data) || !data.length) return;
+
+    const cloudIds = new Set(data.map(o => o.id));
+    const merged = data.map(o => {
+      const copy = { ...o, images: (o.images || []).slice() };
+      if (NAME_RENAMES[copy.id] && /цех/i.test(String(copy.name || ""))) {
+        copy.name = NAME_RENAMES[copy.id];
+      }
+      if (copy.id === "object-8" && /механический цех/i.test(String(copy.description || ""))) {
+        copy.description = String(copy.description).replace(/механический цех/gi, "механический корпус");
+      }
+      return copy;
+    });
+
+    DEFAULT_PROPERTIES.forEach(def => {
+      if (!cloudIds.has(def.id)) {
+        merged.push({ ...def, images: (def.images || []).slice() });
+      }
+    });
+
+    PROPERTIES.length = 0;
+    merged.forEach(o => PROPERTIES.push(o));
   } catch(e){ /* нет связи — работаем на встроенных данных */ }
 }
 
@@ -899,9 +934,9 @@ function renderObject(id){
           <div class="spec-panel-item"><div class="icon-row">${ICONS.power} Эл. мощность</div><div class="value">${p.power} <span class="unit">кВт</span></div></div>
           <div class="spec-panel-item"><div class="icon-row">${ICONS.floor} Этаж</div><div class="value">${p.floor}</div></div>
           <div class="spec-panel-item"><div class="icon-row">${ICONS.height} Высота потолков</div><div class="value">${num(p.height)} <span class="unit">м</span></div></div>
-          <div class="spec-panel-item"><div class="icon-row">${ICONS.height} Высота ворот</div><div class="value">${num(p.gateHeight)} <span class="unit">м</span></div></div>
-          <div class="spec-panel-item"><div class="icon-row">${ICONS.area} Ширина ворот</div><div class="value">${num(p.gateWidth)} <span class="unit">м</span></div></div>
-          <div class="spec-panel-item"><div class="icon-row">Тип ворот</div><div class="value" style="font-size:17px;">${p.gateType}</div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.height} Высота ворот</div><div class="value">${p.gateHeight ? `${num(p.gateHeight)} <span class="unit">м</span>` : "уточняется"}</div></div>
+          <div class="spec-panel-item"><div class="icon-row">${ICONS.area} Ширина ворот</div><div class="value">${p.gateWidth ? `${num(p.gateWidth)} <span class="unit">м</span>` : "уточняется"}</div></div>
+          <div class="spec-panel-item"><div class="icon-row">Тип ворот</div><div class="value" style="font-size:17px;">${p.gateType && p.gateType !== "—" ? p.gateType : "уточняется"}</div></div>
         </div>
       </div>
       <div class="object-description"><h3>Описание</h3><p>${p.description}</p></div>
