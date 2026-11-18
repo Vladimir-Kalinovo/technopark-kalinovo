@@ -112,7 +112,7 @@ main { flex: 1; }
   color: var(--color-steel); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
 }
 .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--color-amber); display: inline-block; }
-.page-hero h1 { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -.4px; margin: 0 0 14px; max-width: 780px; }
+.page-hero h1, .page-hero h2 { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -.4px; margin: 0 0 14px; max-width: 780px; }
 .page-hero p { font-size: 16px; color: var(--color-steel); max-width: 620px; margin: 0; }
 
 /* ---------- Панель фильтров ---------- */
@@ -190,7 +190,7 @@ main { flex: 1; }
 .gallery-thumbs button.active { border-color: var(--color-amber); }
 .gallery-thumbs img { width:100%; height:100%; object-fit:cover; }
 .object-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin:24px 0 4px; }
-.object-title-row h1 { font-family: var(--font-display); font-size:30px; margin:0; font-weight:800; }
+.object-title-row h1, .object-title-row h2 { font-family: var(--font-display); font-size:30px; margin:0; font-weight:800; }
 .object-price { font-family: var(--font-mono); font-weight:700; font-size:30px; margin:10px 0 6px; }
 .object-price .per-month { font-size:14px; font-weight:400; color: var(--color-steel); }
 .object-address { font-size:14.5px; color: var(--color-steel); margin-bottom:28px; }
@@ -203,12 +203,12 @@ main { flex: 1; }
 .spec-panel-item .icon-row svg { width:15px; height:15px; color: var(--color-amber); }
 .spec-panel-item .value { font-family: var(--font-mono); font-weight:700; font-size:21px; }
 .spec-panel-item .value .unit { font-size:13px; font-weight:500; color: var(--color-steel); }
-.object-description h2 { font-family: var(--font-display); font-size:17px; margin-bottom:10px; }
+.object-description h2, .object-description h3 { font-family: var(--font-display); font-size:17px; margin-bottom:10px; }
 .object-description p { font-size:15px; color: var(--color-graphite-2); margin-bottom:8px; }
 
 /* ---------- Форма заявки ---------- */
 .lead-form { background: var(--color-white); border: var(--border); border-radius: var(--radius); padding:26px; box-shadow: var(--shadow); }
-.lead-form h2 { font-family: var(--font-display); font-size:19px; margin:0 0 4px; font-weight:700; }
+.lead-form h2, .lead-form h3 { font-family: var(--font-display); font-size:19px; margin:0 0 4px; font-weight:700; }
 .lead-form .form-sub { font-size:13.5px; color: var(--color-steel); margin-bottom:20px; }
 .form-group { margin-bottom:16px; }
 .form-group label { display:block; font-size:13px; font-weight:600; margin-bottom:6px; }
@@ -254,7 +254,7 @@ main { flex: 1; }
   .site-nav { gap:18px; font-size:13px; }
   .site-nav .nav-phone { border-left:none; padding-left:0; }
   .container { padding:0 20px; }
-  .page-hero h1 { font-size:28px; }
+  .page-hero h1, .page-hero h2 { font-size:28px; }
   .property-grid { grid-template-columns: 1fr; }
   .filter-panel { grid-template-columns: 1fr; }
   .spec-panel-grid { grid-template-columns: 1fr; }
@@ -298,7 +298,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Каталог объектов</div>
-        <h1>Помещения с производственной электрической мощностью</h1>
+        <h1>Аренда производственных и складских помещений в Серпухове</h1>
         <p>Склады и производственные площади в аренду. У каждого объекта указаны площадь, электрическая мощность и высота потолков — чтобы вы сразу видели, подходит ли помещение под оборудование.</p>
       </div>
     </section>
@@ -345,7 +345,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">О компании</div>
-        <h1>Сдаём производственные и складские площади</h1>
+        <h2>Сдаём производственные и складские площади</h2>
         <p>Технопарк Калиново — производственно-складской комплекс в г.о. Серпухов Московской области. Сдаём в аренду отапливаемые помещения под производство, склад и лёгкую промышленность с подведённой электрической мощностью, удобным подъездом для грузового транспорта и гибкими условиями договора.</p>
       </div>
     </section>
@@ -359,7 +359,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
           <div class="spec-panel-item"><div class="icon-row">Электрическая мощность на территории</div><div class="value">7 <span class="unit">МВт</span></div></div>
         </div>
       </div>
-      <h2 style="font-family: var(--font-display); margin-top: 40px;">Почему арендуют у нас</h2>
+      <h3 style="font-family: var(--font-display); margin-top: 40px; font-size: 1.5em;">Почему арендуют у нас</h3>
       <p style="color: var(--color-steel);">Высокая электрическая мощность для оборудования, удобная логистика, гибкие условия договора, готовность помещений к заезду.</p>
     </div>
   </section>
@@ -369,7 +369,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Контакты</div>
-        <h1>Свяжитесь с нами</h1>
+        <h2>Свяжитесь с нами</h2>
         <p>Ответим на вопросы по объектам, договору аренды и подключению электрической мощности.</p>
       </div>
     </section>
@@ -385,7 +385,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
           </div>
         </div>
         <div class="lead-form">
-          <h2>Свободная заявка</h2>
+          <h3>Свободная заявка</h3>
           <div class="form-sub">Если вас интересует несколько объектов сразу — напишите нам</div>
           <form id="contactForm">
             <div class="form-group"><label for="cName">Имя *</label><input type="text" id="cName" placeholder="Иван Иванов" required></div>
@@ -429,7 +429,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Только для владельца</div>
-        <h1>Панель управления</h1>
+        <h2>Панель управления</h2>
         <p>Здесь можно менять цену, статус, метраж и другие параметры объектов без обращения к разработчику.</p>
       </div>
     </section>
@@ -886,7 +886,7 @@ function renderObject(id){
       <div class="gallery-main" id="galleryMain"></div>
       <div class="gallery-thumbs" id="galleryThumbs"></div>
       <div class="object-title-row">
-        <h1>${p.name}</h1>
+        <h2>${p.name}</h2>
         <span class="status-badge ${p.status}" style="position:static;">${statusLabel(p.status)}</span>
       </div>
       <div class="object-price">${priceHtml(p)}</div>
@@ -904,10 +904,10 @@ function renderObject(id){
           <div class="spec-panel-item"><div class="icon-row">Тип ворот</div><div class="value" style="font-size:17px;">${p.gateType}</div></div>
         </div>
       </div>
-      <div class="object-description"><h2>Описание</h2><p>${p.description}</p></div>
+      <div class="object-description"><h3>Описание</h3><p>${p.description}</p></div>
     </div>
     <div class="lead-form">
-      <h2>Подать заявку</h2>
+      <h3>Подать заявку</h3>
       <div class="form-sub">Заполните форму — мы свяжемся с вами</div>
       <form id="leadForm">
         <div class="form-group"><label for="leadName">Имя *</label><input type="text" id="leadName" placeholder="Иван Иванов" required></div>
