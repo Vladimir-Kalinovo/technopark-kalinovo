@@ -168,9 +168,11 @@ main { flex: 1; }
 .spec .spec-value .unit { font-size:11px; font-weight:500; color: var(--color-steel); margin-left:2px; }
 .spec .spec-label { font-size:10px; letter-spacing:.4px; text-transform:uppercase; color: var(--color-steel-light); margin-top:2px; }
 .card-footer { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
-.card-price { font-family: var(--font-mono); font-weight:700; font-size:18px; }
+.card-price { font-family: var(--font-mono); font-weight:700; font-size:18px; line-height:1.25; }
 .card-price .per-month { font-size:12px; font-weight:400; color: var(--color-steel); }
 .card-price .vat-note, .object-price .vat-note { font-size:12px; font-weight:400; color: var(--color-steel); }
+.card-price .price-rate, .object-price .price-rate { display:block; font-size:12px; font-weight:500; color: var(--color-steel); margin-top:3px; }
+.object-price .price-rate { font-size:14px; }
 .card-type-tag { font-size:12.5px; color: var(--color-steel); border-bottom:1px solid var(--color-amber); }
 .empty-state { grid-column: 1/-1; text-align:center; padding:64px 20px; color: var(--color-steel); font-size:15px; }
 
@@ -508,9 +510,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 // ДАННЫЕ ПО ОБЪЕКТАМ — редактируйте только этот массив
 // =========================================================================
 const DEFAULT_PROPERTIES = [
-  { id:"kmc-1070", name:"КМЦ 1070", status:"free", type:"production", typeLabel:"Производство", price:428000, vat:true, area:1070, power:150, height:6, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
+  { id:"kmc-1070", name:"КМЦ 856", status:"free", type:"production", typeLabel:"Производство", price:256800, vat:true, area:856, power:150, height:6, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
-    description:"Административно-складской комплекс с отдельным входом, парковкой для грузового транспорта и подведённой электрической мощностью, достаточной для установки производственного оборудования.",
+    description:"Административно-складской комплекс с отдельным входом, парковкой для грузового транспорта и подведённой электрической мощностью, достаточной для установки производственного оборудования. Ставка от 300 ₽/м².",
     images:["kmc-1070-1.jpg","kmc-1070-5.jpg","kmc-1070-6.jpg","kmc-1070-8.jpg","kmc-1070-10.jpg","kmc-1070-7.jpg","kmc-1070-9.jpg","kmc-1070-2.jpg","kmc-1070-4.jpg","kmc-1070-3.jpg","kmc-1070-11.jpg"] },
   { id:"kmc-1400", name:"КМЦ 1400", status:"free", type:"warehouse", typeLabel:"Склад", price:560000, vat:true, area:1400, power:150, height:7.5, gateHeight:4, gateWidth:4, gateType:"автоматические", floor:1,
     address:"г.о. Серпухов, д. Калиново", fullAddress:"Московская область, г.о. Серпухов, д. Калиново, квартал-А, строение 1",
@@ -550,7 +552,27 @@ const DEFAULT_PROPERTIES = [
     images:["korpus-27-1.jpg","korpus-27-2.jpg","korpus-27-3.jpg"] },
 ];
 
-const PROPERTIES = DEFAULT_PROPERTIES.map(o => ({ ...o, images: (o.images || []).slice() }));
+// Ставки ₽/м² (месячная цена = ставка × площадь)
+const RATE_RULES = {
+  "kmc-1070": { rate: 300, from: true }, // КМЦ / МЦ 856
+  "object-7": { rate: 480 },             // Корпус 26
+  "korpus-1060": { rate: 480 },
+  "korpus-27": { rate: 500 }
+};
+const DEFAULT_RATE = 400;
+
+function rateInfo(p){
+  return RATE_RULES[p.id] || { rate: DEFAULT_RATE, from: false };
+}
+function applyRatePricing(p){
+  const info = rateInfo(p);
+  p.ratePerM2 = info.rate;
+  p.rateFrom = !!info.from;
+  if (p.area) p.price = Math.round(Number(info.rate) * Number(p.area));
+  return p;
+}
+
+const PROPERTIES = DEFAULT_PROPERTIES.map(o => applyRatePricing({ ...o, images: (o.images || []).slice() }));
 
 // Цех → Корпус (названия карточек); не трогаем правки владельца вроде «КМЦ 856»
 const NAME_RENAMES = {
@@ -599,12 +621,12 @@ async function loadCloudData(){
           .filter(img => img !== "object-7-plan.jpg");
         copy.images.push("object-7-plan.jpg");
       }
-      return copy;
+      return applyRatePricing(copy);
     });
 
     DEFAULT_PROPERTIES.forEach(def => {
       if (!cloudIds.has(def.id)) {
-        merged.push({ ...def, images: (def.images || []).slice() });
+        merged.push(applyRatePricing({ ...def, images: (def.images || []).slice() }));
       }
     });
 
@@ -839,7 +861,12 @@ const ICONS = {
 
 function formatPrice(n){ return n.toLocaleString("ru-RU"); }
 function num(n){ return String(n).replace(".", ","); } // десятичный разделитель по-русски
-function priceHtml(p){ return formatPrice(p.price) + ' ₽<span class="per-month"> /мес</span>' + (p.vat ? ' <span class="vat-note">с НДС</span>' : ''); }
+function priceHtml(p){
+  const info = rateInfo(p);
+  const rateLine = (info.from ? "от " : "") + formatPrice(info.rate) + " ₽/м²";
+  return formatPrice(p.price) + ' ₽<span class="per-month"> /мес</span>' + (p.vat ? ' <span class="vat-note">с НДС</span>' : '')
+    + `<span class="price-rate">${rateLine}</span>`;
+}
 function statusLabel(s){ return s === "free" ? "Свободно" : "Арендовано"; }
 
 // =========================================================================
